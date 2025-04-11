@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "327215507914",
+    "project_id": "fir-34cd7",
+    "storage_bucket": "fir-34cd7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:327215507914:android:b0a115e8320928f0f94733",
+        "android_client_info": {
+          "package_name": "com.example.firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4ilVBTkCslnhq56C_UewCfGwENX5r6u0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:327215507914:android:34b6f06df2a77456f94733",
+        "android_client_info": {
+          "package_name": "com.example.fogobase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4ilVBTkCslnhq56C_UewCfGwENX5r6u0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
