@@ -54,6 +54,8 @@ fun fogoBase() {
     var tel by remember { mutableStateOf("") }
     var idade by remember { mutableStateOf("") }
 
+    var dados by remember { mutableStateOf("") }
+
     Column(
         Modifier
             .background(Color.Unspecified)
@@ -66,7 +68,7 @@ fun fogoBase() {
                 .padding(30.dp),
             Arrangement.Center
         ) {
-            Text("App Cadastro", fontFamily = FontFamily.Cursive, fontSize = 25.sp)
+            Text("Cadastro Masculo!!!", fontFamily = FontFamily.Cursive, fontSize = 25.sp)
         }
 
         Row(
@@ -154,9 +156,31 @@ fun fogoBase() {
                 colors = ButtonDefaults.buttonColors(containerColor = Color.Black)
 
             ) {
-                Text("Cadastrar," +
+                Text("Cadastrar" +
                         "", fontSize = 25.sp)
             }
+            Button(
+                onClick = {
+                    val db = Firebase.firestore
+
+                    db.collection("Usuario")
+                        .get()
+                        .addOnSuccessListener { result ->
+                            for (document in result) {
+                                Log.d(TAG, "${document.id} => ${document.data}")
+                                dados = result.joinToString("\n") { "${it.id} => ${it.data}" }
+                            }
+                        }
+                        .addOnFailureListener { exception ->
+                            Log.w(TAG, "Error getting documents.", exception)
+                        }
+                },
+                colors = ButtonDefaults.buttonColors(containerColor = Color.DarkGray)
+            ) {
+                Text("Consulta", fontSize = 25.sp)
+            }
+            Text(dados)
+
         }
     }
 }
